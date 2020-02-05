@@ -9,9 +9,7 @@ public interface FooApiService {
     FooDto getFoo(Long fooId);
     Collection<FooDto> getFoos();
 
-    FooDto createFoo(FooDto fooDto);
-
-    void saveFoo(FooDto foo);
+    void createOrUpdateFoo(FooDto foo);
 
     void deleteFoo(Long fooId);
     void deleteFoos(Collection<Long> fooIds);

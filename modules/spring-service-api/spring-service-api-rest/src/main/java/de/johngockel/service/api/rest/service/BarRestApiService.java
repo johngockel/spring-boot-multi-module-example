@@ -33,16 +33,9 @@ public class BarRestApiService implements BarApiService {
         return BarDto.fromEntities(bars);
     }
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public BarDto createBar(@RequestBody BarDto barDto) {
-        Bar newBar = barService.newBar(barDto.getName(), barDto.getDescription());
-        return BarDto.fromEntity(newBar);
-    }
-
     @PutMapping()
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void saveBar(@RequestBody BarDto barDto) {
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createOrUpdateBar(@RequestBody BarDto barDto) {
         Bar bar = barService.getBar(barDto.getId());
         barDto.updateBar(bar);
         barService.saveBar(bar);

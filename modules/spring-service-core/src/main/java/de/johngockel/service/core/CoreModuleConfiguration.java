@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@ComponentScan(basePackages = "de.johngockel.service.core")
 @EntityScan("de.johngockel.service.core.entity")
 @EnableJpaRepositories(basePackages = "de.johngockel.service.core")
 public class CoreModuleConfiguration {

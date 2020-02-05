@@ -33,17 +33,10 @@ public class FooRestApiService implements FooApiService {
         return FooDto.fromEntities(foos);
     }
 
-    @PostMapping()
-    @ResponseStatus(HttpStatus.CREATED)
-    public FooDto createFoo(@RequestBody FooDto fooDto) {
-        Foo newFoo = fooService.newFoo(fooDto.getName(), fooDto.getDescription());
-        return FooDto.fromEntity(newFoo);
-    }
-
     @PutMapping()
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void saveFoo(@RequestBody FooDto fooDto) {
-        Foo foo = fooService.getFoo(fooDto.getId());
+    public void createOrUpdateFoo(@RequestBody FooDto fooDto) {
+        Foo foo = new Foo();
         fooDto.updateFoo(foo);
         fooService.saveFoo(foo);
     }

@@ -51,6 +51,11 @@
                 <artifactId>springdoc-openapi-ui</artifactId>
                 <version>1.2.30</version>
             </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-security</artifactId>
+                <version>1.2.30</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
